@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Quiz</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+        text-align: center;
+        color: #333;
+    }
+    form {
+        margin-top: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    input[type="number"], textarea, input[type="text"], select {
+        width: calc(100% - 22px); /* Adjusted width to accommodate borders */
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .add-question-btn {
+        background-color: #008CBA;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        margin: 20px auto 0;
+    }
+    .add-question-btn:hover {
+        background-color: #005F6B;
+    }
+    .questionInput {
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .exit-btn {
+        background-color: #f44336;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        margin: 20px auto 0;
+    }
+    .exit-btn:hover {
+        background-color: #d32f2f;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Generate Quiz</h1>
+    <form id="quizForm">
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject" required>
+            <option value="">Choose Subject</option>
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="history">History</option>
+            <!-- Add more subjects as needed -->
+        </select>
+        
+        <label for="numQuestions">Number of Questions:</label>
+        <input type="number" id="numQuestions" name="numQuestions" min="1" max="10" required>
+        
+        <h2>Questions:</h2>
+        <div id="questionsContainer">
+            <!-- Questions and answer choices will be added dynamically here -->
+        </div>
+        
+        <input type="submit" value="Lock Quiz">
+    </form>
+    <button class="add-question-btn" onclick="addQuestion()">Add Question</button>
+    <a href="exit.html" class="exit-btn">Exit</a>
+</div>
+
+<script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        // Retrieve the selected subject
+        var subject = document.getElementById("subject").value;
+        
+        // Retrieve the number of questions
+        var numQuestions = document.getElementById("numQuestions").value;
+        
+        // Retrieve questions and answer choices
+        var questions = [];
+        var questionInputs = document.querySelectorAll(".questionInput");
+        questionInputs.forEach(function(input) {
+            var question = {
+                question: input.querySelector(".question").value,
+                choices: []
+            };
+            var choiceInputs = input.querySelectorAll(".choice");
+            choiceInputs.forEach(function(choiceInput) {
+                question.choices.push(choiceInput.value);
+            });
+            questions.push(question);
+        });
+        
+        // Lock the quiz or perform any other action
+        console.log("Quiz locked with the following details - Subject:", subject, "Number of Questions:", numQuestions, "Questions:", questions);
+
+        // Simulating exiting the page after quiz completion (You can replace it with your desired functionality)
+        // window.location.href = "exit.html";
+    });
+    
+    function addQuestion() {
+        var questionsContainer = document.getElementById("questionsContainer");
+        var questionInput = document.createElement("div");
+        questionInput.classList.add("questionInput");
+        questionInput.innerHTML = `
+            <textarea class="question" placeholder="Enter the question"></textarea>
+            <input class="choice" type="text" placeholder="Choice 1">
+            <input class="choice" type="text" placeholder="Choice 2">
+            <input class="choice" type="text" placeholder="Choice 3">
+            <input class="choice" type="text" placeholder="Choice 4">
+        `;
+        questionsContainer.appendChild(questionInput);
+    }
+    
+    addQuestion(); // Initially add one question
+    
+</script>
+
+</body>
+</html>

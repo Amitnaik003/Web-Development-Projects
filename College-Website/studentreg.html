@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institution Dashboard for Student</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ecf0f1;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2287da;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .quiz-section {
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Institution Dashboard for Students</h1>
+        <form id="studentDetailsForm">
+            <div id="studentsContainer">
+                <!-- Initial set of form fields for the first student -->
+                <div class="studentFields">
+                    <label for="name">Student Name:</label>
+                    <input type="text" class="name" required>
+
+                    <label for="age">Age:</label>
+                    <input type="text" class="age" required>
+
+                    <label for="class">Class:</label><br>
+                    <input type="text" class="class" required>
+                </div>
+            </div>
+        </form>
+        <div class="quiz-section">
+            <h2>Quiz Section</h2>
+            <a href="quiz1.html"><button> Quiz on English</button></a> <br> <br>
+            <a href="quiz2.html"><button> Quiz on Mathematics</button></a><br> <br>
+            <a href="quiz3.html"><button> Quiz on Science</button></a>
+            <!-- Add quiz-related elements here -->
+        </div>
+    </div>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const studentsContainer = document.getElementById('studentsContainer');
+            const studentDetailsForm = document.getElementById('studentDetailsForm');
+
+            function addStudent() {
+                // Create a new set of form fields for a student
+                const newStudentFields = document.createElement('div');
+                newStudentFields.className = 'studentFields';
+                newStudentFields.innerHTML = `
+            <label for="name">Student Name:</label>
+            <input type="text" class="name" required>
+
+            <label for="age">Age:</label>
+            <input type="text" class="age" required>
+
+            <label for="class">Class:</label>
+            <input type="text" class="class" required>
+
+            <label for="marks">Subject Marks (comma-separated):</label>
+            <input type="text" class="subjectMarks" placeholder="e.g., 90, 85, 92" required>
+
+            <label for="feedback">Feedback:</label>
+            <textarea class="feedback" rows="4"></textarea>`;
+
+                // Append the new set of form fields to the container
+                studentsContainer.appendChild(newStudentFields);
+            }
+            function mysubmit() {
+                alert("Student Details has been submitted!");
+                console.log("Student Details has been submitted!");
+            }
+
+
+            function takeQuiz() {
+                console.log('Taking Quiz...');
+            }
+
+            window.addStudent = addStudent;
+            window.takeQuiz = takeQuiz;
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow-x: auto; /* Add horizontal scrollbar if table exceeds container width */
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden; /* Hide overflowing content */
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        td:first-child {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .present, .absent {
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .present {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .absent {
+            background-color: #f44336;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Attendance</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Classes Taken</th>
+                    <th>Classes Absent</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maths</td>
+                    <td class="present">10</td>
+                    <td class="absent">5</td>
+                </tr>
+                <tr>
+                    <td>Science</td>
+                    <td class="present">12</td>
+                    <td class="absent">3</td>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td class="present">14</td>
+                    <td class="absent">1</td>
+                </tr>
+                <tr>
+                    <td>Computer Science</td>
+                    <td class="present">15</td>
+                    <td class="absent">0</td>
+                </tr>
+                <!-- Add more rows for additional subjects -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

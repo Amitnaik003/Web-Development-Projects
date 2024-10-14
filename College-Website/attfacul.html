@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            max-width: 500px;
+            width: 100%;
+            transform: translateY(0);
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        select, input[type="text"], input[type="date"], input[type="submit"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus, input[type="text"]:focus, input[type="date"]:focus {
+            border-color: #007bff;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 50%;
+            margin: 0 auto;
+            padding: 12px 20px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .student-list {
+            list-style: none;
+            padding: 0;
+            
+        }
+
+        .student-item {
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .attendance-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #fff;
+            width: 80px; /* Added width */
+            display: flex; /* Added display */
+            justify-content: center; /* Center align text */
+            align-items: center; /* Center align text */
+        }
+
+        .attendance-btn.present {
+            background-color: #4caf50;
+        }
+
+        .attendance-btn.absent {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Update Student Attendance</h1>
+        <form id="attendance-form">
+            <label for="class">Select Class:</label>
+            <select id="class" name="class">
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <!-- Add more options for classes -->
+            </select>
+
+            <label for="subject">Select Subject:</label>
+            <select id="subject" name="subject">
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+                <option value="English">Math</option>
+                <option value="Social">Science</option>
+                <!-- Add more options for subjects -->
+            </select>
+
+           
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <input type="submit" value="Mark Attendance">
+        </form>
+
+        <h2>Student List</h2>
+        <ul class="student-list" id="student-list">
+            <!-- Dummy student list -->
+            <li class="student-item" data-usn="101">
+                <span>101 - John Doe</span>
+                <button class="attendance-btn present">Present</button>
+                <button class="attendance-btn absent">Absent</button>
+            </li>
+            <!-- Repeat the following list item block for each student -->
+            <li class="student-item" data-usn="102">
+                <span>102 - Jane Smith</span>
+                <button class="attendance-btn present">Present</button>
+                <button class="attendance-btn absent">Absent</button>
+            </li>
+            <!-- Add more dummy student items -->
+            <li class="student-item" data-usn="102">
+                <span>103 - Jane d</span>
+                <button class="attendance-btn present">Present</button>
+                <button class="attendance-btn absent">Absent</button>
+            </li>
+            <li class="student-item" data-usn="102">
+                <span>104 - Smith h</span>
+                <button class="attendance-btn present">Present</button>
+                <button class="attendance-btn absent">Absent</button>
+            </li>
+            <li class="student-item" data-usn="102">
+                <span>105 - Joe k</span>
+                <button class="attendance-btn present">Present</button>
+                <button class="attendance-btn absent">Absent</button>
+            </li>
+            <li class="student-item" data-usn="102">
+                <span>106 - Anan KP</span>
+                <button class="attendance-btn present">Present</button>
+                <button class="attendance-btn absent">Absent</button>
+            </li>
+            <li class="student-item" data-usn="102">
+                <span>107 - Diana Jain</span>
+                <button class="attendance-btn present">Present</button>
+                <button class="attendance-btn absent">Absent</button>
+            </li>
+            <li class="student-item" data-usn="102">
+                <span>108 - Jack Tp</span>
+                <button class="attendance-btn present">Present</button>
+                <button class="attendance-btn absent">Absent</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Add event listener to the form submission
+        document.getElementById('attendance-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the form data
+            const formData = new FormData(this);
+            const classValue = formData.get('class');
+            const subjectValue = formData.get('subject');
+            const usnValue = formData.get('usn');
+            const nameValue = formData.get('name');
+            const dateValue = formData.get('date');
+
+            // Do something with the form data (e.g., send it to the server)
+            console.log('Class:', classValue);
+            console.log('Subject:', subjectValue);
+            console.log('USN:', usnValue);
+            console.log('Name:', nameValue);
+            console.log('Date:', dateValue);
+        });
+
+        // Add event listeners to the attendance buttons
+        const attendanceButtons = document.querySelectorAll('.attendance-btn');
+        attendanceButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const isPresent = this.classList.contains('present');
+                const usn = this.parentElement.dataset.usn;
+
+                // Update the attendance status (dummy functionality)
+                console.log(`Attendance marked for student ${usn}: ${isPresent ? 'Absent' : 'Present'}`);
+            });
+        });
+    </script>
+</body>
+</html>

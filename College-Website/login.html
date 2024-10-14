@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration and Login</title>
+    <script src="mainfile.js" ></script>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .content h3 {
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .content h1 span {
+            color: #e74c3c;
+        }
+
+        .content p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            background: #e74c3c;
+            color: #fff;
+            margin: 0 5px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .content .btn:hover {
+            background: #c0392b;
+        }
+
+        .form-container {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 20px auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #login_option{
+            background-color: #3498db;
+            cursor: pointer;
+        }
+
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 15px;
+            font-size: 17px;
+            margin: 0px ;
+            background: #eee;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h3><span>Welcome to Student Portal</span></h3>
+            <h1><span>Student Registration</span></h1>
+            <p>Register now to access the student portal and manage your academic information.</p>
+            <a href="Registration.html"><button class="btn">Register</button></a>
+        </div>
+    </div>
+    <div class="form-container">
+            <form>
+                <h3>Student Login</h3>
+                <div class="login_option">
+                    <label for="userType">Login as:</label>
+                    <select id="userType" name="userType" required>
+                        <option value="student">Student</option>
+                        <option value="institution">Institution</option>
+                    </select><br><br>
+                </div>
+            </form>
+        <form name="form" id="form">
+            <label for="username">Username</label>
+            <input id="username"  name="username" type="text">
+            <br>
+            <label for="password">Password</label>
+            <input id="password"  name="password" type="password">
+            <br><br>
+            <input id="login_option" type="button" value="login" onclick="javascript:myfucntion()"/>
+            <br><br>
+            <a onclick="window.open('forgetPassword.html')" href="">Forget Password</a><br><br>
+        </form>
+    </div>
+
+    <script type="text/javascript" >
+        function myfucntion(){
+            if(document.getElementById("username").value=="Bhoomika" && document.getElementById("password").value=="Bhoomika@60"){
+                window.location="welcome.html";
+            }
+            else if(document.getElementById("username").value=="Ananya" && document.getElementById("password").value=="Ananya@76"){
+                window.location="welcome.html";
+            }
+            else if(document.getElementById("username").value=="Sanikha" && document.getElementById("password").value=="Sanikha@123"){
+                window.location="welcome.html";
+            }
+            else if(document.getElementById("username").value=="Swarnikha" && document.getElementById("password").value=="Swarnikha@23"){
+                window.location="welcome.html";
+            }
+            else if(document.getElementById("username").value=="Amit" && document.getElementById("password").value=="Amit@9740"){
+                window.location="welcome.html";
+            }
+            // Faculties or from institution
+            else if(document.getElementById("username").value=="Prasad" && document.getElementById("password").value=="Prasad@45"){
+
+                window.location="facu.html";
+            }
+            else if(document.getElementById("username").value=="Nagraj" && document.getElementById("password").value=="Nagraj@6362"){
+                window.location="facu.html";
+            }else if(document.getElementById("username").value=="Mayuri" && document.getElementById("password").value=="Mayuri@123ed"){
+                window.location="facu.html";
+            }
+            else{
+                alert("incurrect password and username!")
+            }
+        }
+        function forgetpsw(){
+            window.location="forgetPassword.html";
+        }
+    </script> 
+    
+</body>
+</html>

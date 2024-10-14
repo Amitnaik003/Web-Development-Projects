@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Performance</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        font-size: 16px;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    tr:hover {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Performance</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>USN</th>
+                <th>Name</th>
+                <th>Performance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dummy data rows will be added here dynamically -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // JavaScript to dynamically add student data to the table
+    window.onload = function() {
+        var students = [
+            { "USN": "USN1234", "Name": "oii", "Performance": 85 },
+            { "USN": "USN5678", "Name": "iop", "Performance": 75 },
+            { "USN": "USN1233", "Name": "adc", "Performance": 85 },
+            { "USN": "USN5677", "Name": "efg", "Performance": 75 },
+            { "USN": "USN1230", "Name": "hijk", "Performance": 85 },
+            { "USN": "USN5679", "Name": "lmn", "Performance": 75 },
+            { "USN": "USN1232", "Name": "opqrst", "Performance": 91 },
+            { "USN": "USN5678", "Name": "yvw", "Performance": 99 },
+            { "USN": "USN1098", "Name": "xyz", "Performance": 77 },
+            { "USN": "USN5634", "Name": "qwe", "Performance": 23},
+            // Add more dummy data as needed
+        ];
+
+        var tbody = document.querySelector("tbody");
+        students.forEach(function(student) {
+            var row = document.createElement("tr");
+            row.innerHTML = "<td>" + student.USN + "</td><td>" + student.Name + "</td><td>" + student.Performance + "</td>";
+            tbody.appendChild(row);
+        });
+    };
+</script>
+
+</body>
+</html>

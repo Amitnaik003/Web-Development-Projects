@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffd700; /* Change background color to gold */
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Take full viewport height */
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Institution Dashboard</h1>
+        <div class="options">
+            <button onclick="checkMarks()">Check Your Marks</button>
+            <button onclick="takeQuiz()">Take a Quiz</button>
+            <button onclick="attendance()">Attendance</button>
+        </div>
+    </div>
+    <script>function checkMarks() {
+        // Redirect to the check marks page
+        window.location.href = "checkmarks.html";
+    }
+    
+    function takeQuiz() {
+        // Redirect to the quiz page
+        window.location.href = "studentreg.html";
+    }
+    
+    function attendance() {
+        // Redirect to the attendance page
+        window.location.href = "attstu.html";
+    }
+    </script>
+</body>
+</html>

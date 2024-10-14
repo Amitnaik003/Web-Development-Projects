@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+            font-size: 16px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .menu a:hover {
+            background-color: #0056b3;
+        }
+
+        .card {
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Institution Dashboard</h1>
+        <div class="menu">
+            <a href="attfacul.html">Update Student Attendance</a>
+            <a href="checkper.html">Check Student Performance</a>
+            <a href="facul.html">Upload Study Material</a>
+            <a href="genquiz.html">Generate Quiz</a>
+        </div>
+        <a href="attfacul.html">
+            <div class="card">
+                <h2>Update Student Attendance</h2>
+                <p>Here you can update the attendance of students.</p>
+            </div>
+        </a>
+        <a href="checkper.html">
+            <div class="card">
+                <h2>Check Student Performance</h2>
+                <p>View the performance of students and analyze their progress.</p>
+            </div>
+        </a>
+        <a href="facul.html">
+            <div class="card">
+                <h2>Upload Study Material</h2>
+                <p>Upload study materials for students to access.</p>
+            </div>
+        </a>
+        <a href="genquiz.html">
+            <div class="card">
+                <h2>Generate Quiz</h2>
+                <p>Create quizzes for students based on their learning objectives.</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
