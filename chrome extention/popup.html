@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Joke Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .joke-container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .joke-text {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .joke-button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .joke-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="joke-container">
+    <div id="joke" class="joke-text">Click "Next Joke" to load a joke!</div>
+    <button id="next-joke-btn" class="joke-button">Next Joke</button>
+  </div>
+
+  <script>
+    const jokeElement = document.getElementById("joke");
+    const jokeButton = document.getElementById("next-joke-btn");
+
+    async function fetchJoke() {
+      try {
+        // Using the Official Joke API to get a random joke
+        const response = await fetch("https://official-joke-api.appspot.com/random_joke");
+        const data = await response.json();
+        // Display the joke setup and punchline
+        jokeElement.textContent = `${data.setup} - ${data.punchline}`;
+      } catch (error) {
+        jokeElement.textContent = "Oops! Couldn't fetch a joke.";
+      }
+    }
+
+    // Load a new joke when the button is clicked
+    jokeButton.addEventListener("click", fetchJoke);
+
+    // Load an initial joke when the page loads
+    fetchJoke();
+  </script>
+
+</body>
+</html>
