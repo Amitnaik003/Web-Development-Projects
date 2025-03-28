@@ -25,7 +25,7 @@ Clone this repository:
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/tic-tac-toe.git
+git clone https://github.com/Amitnaik003/Tic-Tac.git
 Open tictac.html in your browser.
 
 Start playing!
