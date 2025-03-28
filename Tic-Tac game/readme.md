@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/6ae04a42-1fd4-4925-ae4d-35da0ee64fd3)![image](https://github.com/user-attachments/assets/52bd9d89-ec35-4bdf-a858-8f9102a743eb)
+![image](https://github.com/user-attachments/assets/6ae04a42-1fd4-4925-ae4d-35da0ee64fd3)!
 
 🎮 Tic-Tac-Toe Game
 A simple Tic-Tac-Toe game built using HTML, CSS, and JavaScript. This project provides an interactive and visually appealing way to play the classic game in a web browser.
